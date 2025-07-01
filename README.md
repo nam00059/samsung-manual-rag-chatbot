@@ -5,7 +5,7 @@ Builds a searchable knowledge base from a PDF, then answers natural-language que
 
 ---
 
-## Overview
+## 🧐 Overview
 
 Many organizations—especially in manufacturing, electronics, and technical support—hold vast amounts of unstructured PDF documentation. This project demonstrates how to:
 
