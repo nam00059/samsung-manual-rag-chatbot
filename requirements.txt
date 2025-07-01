@@ -1,0 +1,19 @@
+# --- core NLP / RAG stack ---
+transformers>=4.41
+sentence-transformers>=2.7
+huggingface_hub>=0.23
+faiss-cpu>=1.7          # ‼️ use faiss-gpu instead if you have CUDA
+llama-cpp-python>=0.2.16
+
+# --- PDF parsing & preprocessing ---
+pdfplumber>=0.10
+
+# --- general utils ---
+numpy>=1.24
+accelerate>=0.27
+
+# --- Web UI ---
+streamlit>=1.34
+
+# --- optional: for notebook builds / nltk punkt (comment out if unused) ---
+nltk>=3.8
