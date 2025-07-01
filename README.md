@@ -39,4 +39,7 @@ Many organizations—especially in manufacturing, electronics, and technical sup
 
 - **Extensible & Reusable**  
   • Notebook for rapid experimentation (`notebook.ipynb`)  
-  • Easy to swap in new manuals or models  
+  • Easy to swap in new manuals or models
+
+## Data Source:
+   SAMSUNG official site (https://www.samsung.com/ca/support/model/SM-S921WZYAXAC/)
