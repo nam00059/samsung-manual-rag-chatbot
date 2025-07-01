@@ -1,16 +1,42 @@
 # Samsung Manual RAG Chatbot
 
-A fully-local, CPU-only Retrieval-Augmented Generation (RAG) system that answers natural-language questions against the Samsung Galaxy S24 user manual PDF. Built with FAISS for vector search, TinyLlama-1.1B for local inference, and Streamlit for a clean web UI—no external APIs or cloud services required.
+An end-to-end, fully local Retrieval-Augmented Generation (RAG) system for the Samsung Galaxy S24 user manual.  
+Builds a searchable knowledge base from a PDF, then answers natural-language questions via a lightweight TinyLlama chat model—no external APIs, cloud services, or GPUs required.
 
-## 🚀 Features
+---
 
-- **PDF Processing & Chunking**  
-  Clean extraction and sliding-window chunking of a 150-page manual.  
+## Overview
+
+Many organizations—especially in manufacturing, electronics, and technical support—hold vast amounts of unstructured PDF documentation. This project demonstrates how to:
+
+1. **Extract** and **clean** PDF text.
+2. **Chunk** and **embed** content for semantic search.
+3. **Retrieve** relevant passages with FAISS.
+4. **Generate** answers locally using a 4-bit quantized TinyLlama LLM.
+5. **Serve** as a user-friendly web app via Streamlit.
+
+---
+
+## ✨ Features
+
+- **PDF Preprocessing**  
+  • Automatic extraction with `pdfplumber`  
+  • Removal of headers, footers, page numbers, and boilerplate  
+  • Overlapping “sliding-window” chunking to preserve context  
+
 - **Semantic Search**  
-  MiniLM embeddings + FAISS Inner-Product index for fast, accurate retrieval.  
+  • SentenceTransformers MiniLM embeddings  
+  • Normalized vectors + FAISS `IndexFlatIP` for fast cosine search  
+  • Configurable retrieval size (`k`)  
+
 - **Local LLM Inference**  
-  4-bit quantized TinyLlama-1.1B loaded via `llama_cpp` for sub-2 s answers on CPU.  
-- **Web Interface**  
-  Simple Streamlit app—type a question, click “Answer,” and get results instantly.  
-- **Zero API Costs**  
-  Entirely self-contained; ideal for SMEs and on-prem deployments.
+  • TinyLlama-1.1B 4-bit quantized model via `llama_cpp`  
+  • Sub-2 second response time on a 4-core CPU  
+  • Fully offline & zero API cost  
+
+- **Interactive UI**  
+  • Streamlit web interface  
+
+- **Extensible & Reusable**  
+  • Notebook for rapid experimentation (`notebook.ipynb`)  
+  • Easy to swap in new manuals or models  
